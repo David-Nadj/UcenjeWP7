@@ -21,6 +21,6 @@ create table Pristupnici (
 ispitniRok int NOT NULL,
 student varchar(50) NOT NULL,
 brojBodova int NOT NULL,
-ocjena int NOT NULL
+ocjena int NOT NULL,
 foreign key (ispitniRok) references IspitniRok
 );
