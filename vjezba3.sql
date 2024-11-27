@@ -8,17 +8,19 @@ use vjezba3;
 go
 
 create table IspitniRok (
-sifra int,
-predmet varchar(50),
-vrstaIspita varchar(50),
-datum varchar(50),
-pristupio
+sifra int NOT NULL,
+predmet varchar(50) NOT NULL,
+vrstaIspita varchar(50) NOT NULL,
+datum datetime,
+pristupio datetime NOT NULL,
+primary key (sifra)
 );
 
 
 create table Pristupnici (
-ispitniRok int,
-student varchar(50)
-brojBodova varchar(100)
-ocjena varchar(60)
+ispitniRok int NOT NULL,
+student varchar(50) NOT NULL,
+brojBodova int NOT NULL,
+ocjena int NOT NULL
+foreign key (ispitniRok) references IspitniRok
 );
