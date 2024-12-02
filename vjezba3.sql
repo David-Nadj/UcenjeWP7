@@ -17,7 +17,7 @@ pristupio datetime not null,
 
 
 create table Pristupnici (
-ispitniRok int not null references IspitniRok(sifra),
+ispitniRok int not null references ispitniRok(sifra),
 student varchar(50) not null,
 brojBodova int not null,
 ocjena int not null,
