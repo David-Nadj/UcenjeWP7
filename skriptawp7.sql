@@ -8,7 +8,7 @@ use edunovawp7;
 go
 
 create table smjerovi(
-sifra int not null primary key identity(1,1),
+sifra int not null primary key identity(1,1), -- primarni ključ
 naziv varchar(50)not null,
 trajanje int null, -- null se se nemora pisat
 cijena decimal(18,2),
