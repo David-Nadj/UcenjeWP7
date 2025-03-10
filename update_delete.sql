@@ -38,3 +38,7 @@ delete from clanovi where grupa=2;
 -- promjeniti oib omiljenoj osobi naaa 64733268826
 --obriši omiljenu osobu
 
+insert into polaznici (ime, prezime, email) values ('Andreja', 'Nađ', 'andreja19.nad@gmail.com')
+update polaznici set oib='64733268826' where email='andreja19.nad@gmail.com'
+select * from polaznici
+delete polaznici where email='andreja19.nad@gmail.com'
