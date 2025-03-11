@@ -66,6 +66,55 @@ update smjerovi set izvodiseod='2024-10-04 18:30'
 where sifra=4;
 
 -- izlistaj sve smjerove koji počinju u prvoj polovini 2024
-select * from smjerovi
+select * from smjerovi 
 where izvodiseod between '2024-01-01' and '2024-06-30';
 
+use knjiznica;
+
+--slaganje rezultata
+select prezime, ime from autor order by prezime asc, ime desc;
+select prezime, ime from autor order by 1 asc, 2 desc;
+
+-- ograničavanje rezultata
+select top 10 * from autor;
+select top 10 percent * from autor;
+
+select top 10 * from mjesto;
+
+--rezultate select naredbe možemo spremiti u novu tablicu
+select top 10 * into nova from mjesto;
+
+select * from nova;
+drop table nova;
+
+--unesite sebe kao autora
+select top 10* from autor -- order by sifra;
+insert into autor (sifra, ime, prezime, datumrodenja) 
+values (4, 'David', 'Nađ', '1998-01-08')
+
+-- mladi perica boluje jer ga je ostavila cura
+--sto bi mu preporučili da čita iz vaše knjižnice
+
+select count(*) from katalog; -- koliko ima zapisa
+
+select* from katalog
+where naslov like '%ljubav%' and
+sifra in (2541, 2660, 2664, 2938);
+
+
+--koliko ima izdavača koji su društvo s ograničenom odgovornošću?
+
+select count(*) from izdavac;
+select top 20 * from izdavac;
+
+select * from izdavac
+where naziv like '%d.%o%o%' or naziv like '%d%o%o.%';
+
+
+use svastara;
+
+select count(*) from kupci;
+
+use svastara;
+
+select count(*) from Artikli;
